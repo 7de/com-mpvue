@@ -1,0 +1,30 @@
+{
+  "pages": [
+    "pages/home/main",
+    "pages/index/main",
+    "pages/personal/main",
+    "pages/authorize/main",
+    "pages/scan/main",
+    "pages/order/main",
+    "pages/wallet/main",
+    "pages/wallet-detail/main",
+    "pages/wallet-topup/main",
+    "pages/wallet-topup-record/main",
+    "pages/card/main",
+    "pages/card-add/main",
+    "pages/card-detail/main",
+    "pages/setting/main",
+    "pages/setting-user/main",
+    "pages/about/main",
+    "pages/cooperation/main",
+    "pages/help/main",
+    "pages/logs/main",
+    "pages/counter/main"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#1AAD19",
+    "navigationBarTitleText": "康体佳充电",
+    "navigationBarTextStyle": "white"
+  }
+}
