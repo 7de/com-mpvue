@@ -56,7 +56,7 @@
         <div class="zan-cell__ft"></div>
       </a>
       <div class="zan-cell flex-justify-around zan-center">
-        <a class="typeB" v-for="item in cellData.sublist" :key="item.id" :href="item.href">
+        <a class="typeB" v-for="item in cellData.sublist" :key="item.id" :href="item.href" hover-class="none">
           <div class="iconfont" :class="[item.icon?'icon-'+ item.icon : '']"></div>
           <P class="icon-classname">{{item.text}}</P>
         </a>

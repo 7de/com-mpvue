@@ -7,10 +7,10 @@
 		"minified": true,
 		"newFeature": true
 	},
-	"miniprogramRoot": "./dist/",
+	"miniprogramRoot": "dist/",
 	"compileType": "miniprogram",
-	"appid": "touristappid",
-	"projectname": "my-project",
+	"appid": "wx385f55b4aef20405",
+	"projectname": "mpvue%E5%BA%B7",
 	"condition": {
 		"search": {
 			"current": -1,

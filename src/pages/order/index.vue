@@ -1,11 +1,27 @@
+<style scoped>
+.tab-con{
+  margin-top: 47px;
+}
+</style>
+
 <template>
   <div class="com-cont">
-    <comTab :fixed="tabShow" :tab="tabData" @tabeven="tabeven"/>
+    <div v-if="showPage">
+      <load :load="tabShow"/>
+    </div>
+    <div v-else>
+      <comTab :fixed="tabShow" :tab="tabData" @tabeven="tabeven"/>
+      <div class="tab-con">
+        <loadmore :loading="loadingShow" />
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import comTab from '@/components/tab'
+import loadmore from '@/components/com-loadmore'
+import load from '@/components/com-load'
 export default {
   data () {
     return {
@@ -30,15 +46,18 @@ export default {
           }
         ],
         selectedId: 3
-      }
+      },
+      loadingShow: true,
+      showPage: true
     }
   },
   components: {
-    comTab
+    comTab,
+    loadmore,
+    load
   },
   onLoad (option) {
     if (option.selectedId) {
-      console.log(typeof option.selectedId)
       this.tabData.selectedId = option.selectedId
     }
   },

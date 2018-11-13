@@ -98,7 +98,44 @@ export default {
         },
         fail: (res) => {
           console.log('定位失败')
-          // this.getScopeLocation()
+          this.getScopeLocation()
+        }
+      })
+    },
+    // 第一次拒接第二次授权当前位置
+    getScopeLocation () {
+      wx.getSetting({
+        success: (res) => {
+          if (res.authSetting['scope.userLocation'] !== undefined && res.authSetting['scope.userLocation'] !== true) {
+            wx.showModal({
+              title: '是否授权当前位置',
+              content: '需要获取您的地理位置，否则您的位置信息可能有误！',
+              success: (res) => {
+                if (res.confirm) {
+                  wx.openSetting({
+                    success: (data) => {
+                      if (data.authSetting['scope.userLocation'] === true) {
+                        wx.showToast({
+                          title: '设置成功',
+                          icon: 'success',
+                          duration: 1000
+                        })
+                        wx.navigateBack({
+                          delta: 1
+                        })
+                      } else {
+                        wx.showToast({
+                          title: '设置失败',
+                          icon: 'none',
+                          duration: 2000
+                        })
+                      }
+                    }
+                  })
+                }
+              }
+            })
+          }
         }
       })
     },
